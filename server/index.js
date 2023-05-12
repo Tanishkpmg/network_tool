@@ -5,13 +5,11 @@ const cors = require("cors");
 const connection = require("./db");
 const userRoutes = require("./routes/users");
 const authRoutes = require("./routes/auth");
-
-// database connection
 connection();
 
 // middlewares
-app.use(express.json({limit: '50mb'}));
 app.use(cors());
+app.use(express.json({limit: '50mb'}));
 
 // routes
 app.use("/api/users", userRoutes);
